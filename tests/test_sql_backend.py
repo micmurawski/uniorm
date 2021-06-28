@@ -1,5 +1,5 @@
-from uniorm.backends import SQLBackend
 from uniorm import create_dataclass
+from uniorm.backends import SQLBackend
 
 
 def test_sql_backend(sqlite3_file):
@@ -26,7 +26,7 @@ def test_sql_backend(sqlite3_file):
     condition2 = (Person.email == 'jon@wp.pl')
 
     condition3 = condition1 & condition2
-    
+
     result = list(Person.select(condition3, order_by=Person.email))
     assert len(result) == 1
     assert result[0].name == person2.name

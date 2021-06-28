@@ -6,6 +6,7 @@ from setuptools import find_packages, setup
 HERE = os.path.abspath(os.path.dirname(__file__))
 VERSION = '0.0.1'
 
+
 def read(*parts):
     return codecs.open(os.path.join(HERE, *parts), 'r').read()
 

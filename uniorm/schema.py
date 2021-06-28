@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from inspect import Parameter, Signature, _empty
 from typing import Any, AnyStr, Dict, List
 
@@ -60,7 +59,8 @@ class DataSchema(metaclass=DataSchemaMeta):
 
     @classmethod
     def select(cls, condition=None, limit=None, **kwargs):
-        return cls.__backend__.select(schema_class=cls, table_name=cls.__tablename__, condition=condition, limit=limit, **kwargs)
+        return cls.__backend__.select(schema_class=cls, table_name=cls.__tablename__,
+                                      condition=condition, limit=limit, **kwargs)
 
     def save(self):
         return self.__backend__.save(self, self.__tablename__)

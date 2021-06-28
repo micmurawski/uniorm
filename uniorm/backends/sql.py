@@ -80,7 +80,8 @@ class SQLBackend(Backend):
         query = f"insert into {table_name}({', '.join(keys)}) values ({', '.join(values)});"
         self._get_connection().cursor().execute(query)
 
-    def select(self, schema_class: DataSchema, table_name: AnyStr, condition: Condition = None, limit: int = None, order_by=None, **kwargs):
+    def select(self, schema_class: DataSchema, table_name: AnyStr, condition: Condition = None,
+               limit: int = None, order_by=None, **kwargs):
         fields = ', '.join(schema_class.__signature__.parameters.keys())
         query = f'SELECT {fields} FROM {table_name}'
         if condition is not None:

@@ -1,1 +1,1 @@
-from .sql import SQLBackend
+from .sql import SQLBackend # NOQA
