@@ -19,7 +19,7 @@ setup(
     description="Universal ORM for multiple database backends.",
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
-    url="https://github.com/micmurawski/dataops/",
+    url="https://github.com/micmurawski/uniorm/",
     packages=find_packages(exclude=(
         'build',
         'tests',
